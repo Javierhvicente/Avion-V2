@@ -24,7 +24,7 @@ fun main(){
             1 -> mostrarManifiesto(avion)
             2 -> comprarAsiento(avion)
             3 -> devolverAsiento(avion)
-            4 -> comprobarRecaudacion()
+            4 -> comprobarRecaudacion(avion)
             5 -> listadoPasajeros()
             6 -> println("Hasta luego")
             else -> println("Opción no válida")
@@ -35,17 +35,27 @@ fun main(){
 }
 
 fun listadoPasajeros() {
-    TODO("Not yet implemented")
+
 }
 
-fun comprobarRecaudacion() {
-    TODO("Not yet implemented")
+fun comprobarRecaudacion(avion:AVION) {
+    var recaudacion = 0
+    for(filas in avion.indices){
+        for(columnas in avion[filas].indices){
+            if(avion[filas][columnas]==OCUPADO){
+                recaudacion += PRICE
+            }
+        }
+    }
+    println("El total de la recaudación es: $recaudacion €")
+    println()
 }
 
 fun devolverAsiento(vuelo: AVION) {
     println("Para comprar su asiento, debemos comprobar el DNI")
     examinarDNI()
     comprobarValidedDeAsientoYAsignacionOcupada(vuelo)
+
 }
 
 fun comprobarDNI(dni: String): Boolean{
