@@ -135,7 +135,7 @@ private fun comprobarValidedDeAsientoYAsignacionLibre(avion: AVION) {  //TODO Po
     } while (!isCorrect)
     fil--
     col--
-    avion[fil][col] = LIBRE
+    avion[fil][col] = OCUPADO
     println()
 }
 
@@ -155,9 +155,9 @@ private fun ComprobarAsientoLibre(avion: AVION) {
 }
 
 fun hayAsientoLibre(avion:AVION):Boolean{
-    for(filas in avion.indices){
-        for(columnas in avion[filas].indices){
-            if(avion[filas][columnas]==LIBRE){
+    for(fil in avion.indices){
+        for(col in avion[fil].indices){
+            if(avion[fil][col]==LIBRE){
                 return true
             }
 
@@ -168,9 +168,9 @@ fun hayAsientoLibre(avion:AVION):Boolean{
 
 
 fun mostrarManifiesto(avion: AVION) {
-      for (filas in avion.indices){
-          for (columnas in avion[filas].indices){
-              if (avion[filas][columnas]==LIBRE){
+      for (fil in avion.indices){
+          for (col in avion[fil].indices){
+              if (avion[fil][col]==LIBRE){
                   print("|_|")
               }else{
                   print("|X|")
