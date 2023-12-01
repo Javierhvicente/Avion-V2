@@ -6,3 +6,4 @@ Tendremos varias opciones como:
 2. Comprar un asiento
 3. Devolver asiento
 4. Ver recaudación
+5. Ver pasajeros ordenados
